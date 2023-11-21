@@ -1,4 +1,4 @@
 #!/bin/bash
 
-source config
+source config.ini
 ssh -i ~/.ssh/dsenv.pem ubuntu@$PUBLIC_IP

@@ -1,4 +1,4 @@
 #!/bin/bash
 
-source config
+source config.ini
 aws ec2 start-instances --instance-ids $INSTANCE_ID
