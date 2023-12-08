@@ -136,7 +136,7 @@ if [[ "$VOLUME_ID" == "" ]]
 then
     # Create a volume
     echo "Creating volume..."
-    VOLUME_ID = $(aws ec2 create-volume \
+    VOLUME_ID=$(aws ec2 create-volume \
         --availability-zone $AVAILABILITY_ZONE \
         --size 30 \
         --volume-type gp3 \
