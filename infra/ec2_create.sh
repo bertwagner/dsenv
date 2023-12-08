@@ -3,6 +3,8 @@
 #Config variables
 REGION=us-east-1
 TAG_PROJECT_NAME=dsenv
+INSTANCE_TYPE=t3.micro
+AMI=ami-0fc5d935ebf8bc3bc # This ami is Ubuntu Server 22.04 LTS. Pick a different ami at https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#AMICatalog:
 
 echo "Setting up instance in $REGION with name $TAG_PROJECT_NAME"
 
@@ -101,11 +103,11 @@ INSTANCE_ID=$(aws ec2 describe-instances \
 
 if [[ "$INSTANCE_ID" == "" ]]
 then
-    # Create the instance. This ami is Ubuntu Server 22.04 LTS. Pick a different ami at https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#AMICatalog:
+    # Create the instance. 
     echo "Creating instance..."
     INSTANCE_ID=$(aws ec2 run-instances \
-        --image-id ami-0fc5d935ebf8bc3bc \
-        --instance-type t2.micro \
+        --image-id $AMI \
+        --instance-type $INSTANCE_TYPE \
         --count 1 \
         --key-name $KEY_NAME \
         --subnet-id $SUBNET_ID \
