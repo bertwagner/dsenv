@@ -11,7 +11,7 @@ Before using these scripts, the [AWS CLI must be installed](https://docs.aws.ama
 - `ec2_instance_install.sh`: Script to run on a new EC2 instance to install necessary system software (eg. Docker, CUDA, etc...)
 
 
-# TODO:
+### TODO:
 - Add command line args to ec2_create.sh
 - Create tag names to differentiate between dsenv instances in ec2_create.sh.
 - Test creating multiple instances.
